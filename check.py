@@ -18,8 +18,5 @@ store = crypto.X509Store()
 store.add_cert(root_cert)
 store.add_cert(intermediate_cert)
 
-# https://pyopenssl.org/en/stable/api/crypto.html#OpenSSL.crypto.X509StoreFlags
-store.set_flags(crypto.X509StoreFlags.CRL_CHECK)
-
 # Verify
 crypto.X509StoreContext(store, server_cert).verify_certificate()
